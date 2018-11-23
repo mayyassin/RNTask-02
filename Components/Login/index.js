@@ -1,3 +1,4 @@
+import StackNavigator from "../../Navigation";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
@@ -17,6 +18,10 @@ import {
 } from "native-base";
 
 class Login extends Component {
+  static navigationOptions = {
+    title: "Login"
+    // headerTintColor: "black"
+  };
   render() {
     return (
       <Content>
@@ -54,10 +59,18 @@ class Login extends Component {
               </Form>
             </Body>
           </ListItem>
-          <Button full success>
+          <Button
+            full
+            success
+            onPress={() => this.props.navigation.navigate("List")}
+          >
             <Text>Login</Text>
           </Button>
-          <Button full warning>
+          <Button
+            full
+            warning
+            onPress={() => this.props.navigation.navigate("List")}
+          >
             <Text>Register</Text>
           </Button>
         </List>

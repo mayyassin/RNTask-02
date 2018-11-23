@@ -6,6 +6,8 @@ import { connect } from "react-redux";
 import {
   List,
   ListItem,
+  Button,
+  Icon,
   Card,
   CardItem,
   Thumbnail,
@@ -18,8 +20,19 @@ import {
 import styles from "./styles";
 
 class CoffeeList extends Component {
-  handlePress() {
-    alert("Pressed");
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: "Coffee List",
+      headerLeft: null,
+      headerRight: (
+        <Button transparent onPress={() => navigation.navigate("Cart")}>
+          <Icon name="shopping-cart" type="Feather" />
+        </Button>
+      )
+    };
+  };
+  handlePress(shop) {
+    this.props.navigation.navigate("Detail", { shop: shop });
   }
   renderItem(shop) {
     return (

@@ -1,3 +1,4 @@
+import StackNavigator from "../../Navigation";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { View } from "react-native";
@@ -12,10 +13,10 @@ import styles from "./styles";
 import { getCoffeeShops } from "../../store/actions/coffeeActions";
 
 // Components
-import CoffeeList from "../CoffeeList";
-import CoffeeCart from "../CoffeeCart";
-import CoffeeDetail from "../CoffeeDetail";
-import Login from "../Login";
+// import CoffeeList from "../CoffeeList";
+// import CoffeeCart from "../CoffeeCart";
+// import CoffeeDetail from "../CoffeeDetail";
+// import Login from "../Login";
 
 class HomePage extends Component {
   componentDidMount() {
@@ -26,9 +27,7 @@ class HomePage extends Component {
   render() {
     return (
       <Container style={styles.transparent}>
-        <View style={styles.overlay} />
-        <Header style={styles.transparent} />
-        <CoffeeList />
+        <StackNavigator />
       </Container>
     );
   }
